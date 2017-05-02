@@ -3,7 +3,7 @@
     <Tab/>
     <div>
       <div v-for="(item, index) in contentList">
-        <Item :item="item"/>
+        <Item :item="item" :index="index"/>
       </div>
     </div>
   </div>

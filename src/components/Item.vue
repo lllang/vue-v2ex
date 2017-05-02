@@ -22,6 +22,9 @@
           <td width="70" align="right" valign="middle">
             <a href="/t/357725#reply36" class="count_livid">{{item.replies}}</a>
           </td>
+          <td>
+            <a @click="del()">删除</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -30,11 +33,21 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
+
   export default {
     data() {
       return {};
     },
-    props: ['item'],
+    props: ['item', 'index'],
+    methods: {
+      ...mapMutations([
+        'DEL_LIST',
+      ]),
+      del() {
+        this.DEL_LIST(this.index);
+      },
+    },
   };
 </script>
 

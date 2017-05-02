@@ -1,6 +1,7 @@
 import {
   CHANGE_INDEX,
   CHANGE_LIST,
+  DEL_LIST,
 } from './types';
 
 export default {
@@ -9,5 +10,8 @@ export default {
   },
   [CHANGE_LIST](state, list) {
     state.contentList = list;
+  },
+  [DEL_LIST](state, index) {
+    state.contentList.splice(index, 1);
   },
 };
